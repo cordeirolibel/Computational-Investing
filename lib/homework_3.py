@@ -78,6 +78,7 @@ def marketsim(cash,orders,values=None):
     # Work Cash
     for s in symbols:
         df_out['work_cash'] += df_out[s].values*data[s].values
+    df_out['work_cash'].fillna(0,inplace=True)
 
     #====================
     # => Clear Out Data
